@@ -81,7 +81,6 @@ public class EmailController {
 
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-//				return new PasswordAuthentication("one4wu@gmail.com", "wmagokasoeskbktn");
 				return new PasswordAuthentication(hostMail, hostpassword);
 			}
 		});
@@ -103,9 +102,6 @@ public class EmailController {
 		Multipart multipart = new MimeMultipart();
 		multipart.addBodyPart(messageBodyPart);
 
-//	   MimeBodyPart attachPart = new MimeBodyPart();
-//	   attachPart.attachFile("/var/tmp/image19.png");
-//	   multipart.addBodyPart(attachPart);
 
 		msg.setContent(multipart);
 		Transport.send(msg);
